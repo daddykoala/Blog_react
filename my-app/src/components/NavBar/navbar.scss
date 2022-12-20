@@ -1,0 +1,22 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    
+    background: linear-gradient(45deg, rgb(156,14,156),midnightblue);
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+    
+}
+a{
+    margin: 2em;
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    list-style-type: none;
+    text-decoration: none;
+    &:hover{
+        transition: 300ms;
+        color: aqua;
+    }
+}
