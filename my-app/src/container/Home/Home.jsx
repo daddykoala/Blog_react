@@ -9,35 +9,29 @@ import './Home.scss'
 export default function Home() {
 
     const  articles  = useSelector(state => ({
-        ...state.article
+        ...state.article.articles
     }))
-    
+
     const dispatch= useDispatch()
     
-    useEffect( () => {
-        dispatch(getArticles());
-         // eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(() => {
+      dispatch(getArticles())
     }, [])
     
     console.log(articles);
-
+const result = Array.isArray(articles)
+console.log(articles);
   return (
     <>
     <h1 className="home-title">Tous les articles</h1>
     <div className="container-cards">
-        
-       {
-        articles.map(item => {
-            return(
-            <Card key={uuidv4()}>
-                <h2>{item.titles}</h2>
-                <a href="#">Lire l'article</a>
-
-            </Card>
-
-            ) 
-        })
-       }
+        {articles.map(item => {
+          return(
+            <Card key ={uuidv4()}/>
+          )
+        })}
+       
+       
 
     </div>
     </>
